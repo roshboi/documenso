@@ -138,6 +138,24 @@ To create multiple documents from one template with different recipients, use bu
 
 This is useful for sending the same document to many people, such as offer letters or agreements.
 
+### CSV Header Format
+
+Click **Download Template CSV** in the Bulk Send dialog. It gives you a pre-formatted CSV with the correct headers for that template and one row of example data to replace with your own.
+
+<Callout type="warn">
+  Keep the header row exactly as downloaded. Headers are case-sensitive and follow the
+  `recipient_{index}_{field}` pattern, for example `recipient_1_email` and `recipient_1_name`. If a
+  `recipient_{index}_email` column is missing or renamed, the file is not processed.
+</Callout>
+
+Example for a template with two recipients, where each row creates one document:
+
+```csv
+recipient_1_email,recipient_1_name,recipient_2_email,recipient_2_name
+alice@example.com,Alice Johnson,bob@example.com,Bob Smith
+charlie@example.com,Charlie Brown,diana@example.com,Diana Prince
+```
+
 ---
 
 ## See Also
